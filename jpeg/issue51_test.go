@@ -1,4 +1,4 @@
-package jpeg_test
+package jpeg
 
 import (
 	"bytes"

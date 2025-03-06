@@ -31,7 +31,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-package jpeg_test
+package jpeg
 
 import (
 	"fmt"
@@ -39,8 +39,7 @@ import (
 	"image/color"
 	"testing"
 
-	"github.com/pixiv/go-libjpeg/jpeg"
-	"github.com/pixiv/go-libjpeg/test/util"
+	"github.com/sg3des/go-libjpeg/test/util"
 )
 
 type imageTest struct {
@@ -72,7 +71,7 @@ func TestDecodeTestdataFromGoStdlib(t *testing.T) {
 Loop:
 	for _, it := range imageTests {
 		io := util.OpenFile(it.filename)
-		img, err := jpeg.Decode(io, &jpeg.DecoderOptions{})
+		img, err := Decode(io, &DecoderOptions{})
 		if err != nil {
 			t.Errorf("%s: %v", it.filename, err)
 			continue

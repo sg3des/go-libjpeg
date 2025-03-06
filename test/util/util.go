@@ -7,7 +7,6 @@ import (
 	"image"
 	"image/png"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -54,7 +53,7 @@ func OpenFile(name string) (io io.Reader) {
 
 // ReadFile reads and returns data bytes of specified example file.
 func ReadFile(name string) (data []byte) {
-	data, err := ioutil.ReadFile(GetExFilePath(name))
+	data, err := os.ReadFile(GetExFilePath(name))
 	if err != nil {
 		panic(err)
 	}
